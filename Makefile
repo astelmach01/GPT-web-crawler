@@ -13,9 +13,9 @@ format:
 	ruff format .
 
 type:
-	mypy .
+	mypy --ignore-missing-imports . 
 
-check: format type
+check: install format type
 
 compile: $(REQUIREMENTS_TXT)
 

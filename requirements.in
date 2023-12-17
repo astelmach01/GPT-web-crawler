@@ -1,5 +1,7 @@
 python-dotenv
 ruff
-
-
 rich-click
+mypy
+
+scrapy
+beautifulsoup4

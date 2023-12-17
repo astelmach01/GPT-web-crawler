@@ -1,6 +1,7 @@
 import datetime
 
 import rich_click as click
+from .crawl import run_spider
 
 
 @click.group("app")
@@ -10,10 +11,13 @@ def cli():
 
 @cli.command("run")
 @click.option(
-    "--start-date",
-    type=click.DateTime(),
-    help="the start date that which the algorithm runs in",
+    "--url",
+    type=str,
+    help="the domain to crawl",
 )
-@click.option("--end-date", type=click.DateTime(), help="the end time (exclusive")
-def run(start_date: datetime.datetime, end_date: datetime.datetime):
-    print("successfully launched")
+def run(url: str):
+    """Run the crawler."""
+    start_time = datetime.datetime.now()
+    run_spider(url)
+    end_time = datetime.datetime.now()
+    print(f"Time elapsed: {end_time - start_time}")
