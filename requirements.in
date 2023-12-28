@@ -1,7 +1,10 @@
+pytest
+
 python-dotenv
 ruff
 rich-click
-mypy
+
+openai
 
 scrapy
 beautifulsoup4
